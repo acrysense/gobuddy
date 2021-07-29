@@ -1,0 +1,11 @@
+@media (min-width: 1024px) and (max-width: 1123px) {
+    .dashboard {
+        &__content {
+            margin-left: 37px;
+        }
+    }
+    .sidebar {
+        max-width: 239px;
+        min-width: 239px;
+    }
+}

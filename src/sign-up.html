@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Buddy Board - Sign Up</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="auth">
+                <a href="/" class="logotype">
+                    <img src="img/dist/logotype.svg" alt="goBuddy">
+                </a>
+                <form action="#" class="auth-form">
+                    <a href="#" class="auth-form__sign-up btn btn--blue">
+                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.1921 2.95923H4.80469V19.039H9.62381V22.4051L12.3603 19.6686H17.4457L22.1921 14.9222V2.95923Z" fill="white"/>
+                            <path d="M4.02051 2.0625L2.55078 5.81738V21.1641H7.77539V23.9375H10.7148L13.4883 21.1641H17.7363L23.4492 15.4512V2.0625H4.02051ZM21.4912 14.4697L18.2246 17.7363H13L10.2266 20.5098V17.7363H5.81738V4.02051H21.4912V14.4697ZM18.2246 7.77539V13.4834H16.2666V7.77539H18.2246ZM13 7.77539V13.4834H11.042V7.77539H13Z" fill="#9147FF"/>
+                        </svg>
+                        <span>Sign up with Twitch</span>
+                    </a>
+                    <a href="#" class="auth-form__sign-up btn btn--blue">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6.63965" y="7.28955" width="13.4643" height="10.8006" fill="white"/>
+                            <path d="M24.2084 7.10777C23.9358 6.08129 23.1326 5.27287 22.1128 4.99852C20.2642 4.5 12.8519 4.5 12.8519 4.5C12.8519 4.5 5.43954 4.5 3.59097 4.99852C2.57114 5.27292 1.76793 6.08129 1.49531 7.10777C1 8.96832 1 12.8502 1 12.8502C1 12.8502 1 16.732 1.49531 18.5926C1.76793 19.6191 2.57114 20.3938 3.59097 20.6681C5.43954 21.1667 12.8519 21.1667 12.8519 21.1667C12.8519 21.1667 20.2642 21.1667 22.1128 20.6681C23.1326 20.3938 23.9358 19.6191 24.2084 18.5926C24.7037 16.732 24.7037 12.8502 24.7037 12.8502C24.7037 12.8502 24.7037 8.96832 24.2084 7.10777ZM10.4276 16.3746V9.32574L16.6229 12.8503L10.4276 16.3746Z" fill="#FF0000"/>
+                        </svg>
+                        <span>Sign up with YouTube</span>
+                    </a>
+                    <a href="#" class="auth-form__sign-up btn btn--blue">
+                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                            <ellipse cx="13" cy="12.4975" rx="12" ry="11.9975" fill="white"/>
+                            <path d="M25 12.4885C25 5.86206 19.629 0.493164 13 0.493164C6.37097 0.493164 1 5.86206 1 12.4885C1 18.4756 5.38823 23.4382 11.125 24.3388V15.9561H8.07661V12.4885H11.125V9.84568C11.125 6.83958 12.9153 5.17909 15.6574 5.17909C16.9706 5.17909 18.3439 5.4132 18.3439 5.4132V8.36367H16.8303C15.34 8.36367 14.875 9.28847 14.875 10.237V12.4885H18.2031L17.6708 15.9561H14.875V24.3388C20.6118 23.4382 25 18.4756 25 12.4885Z" fill="url(#paint0_linear)"/>
+                            </g>
+                            <defs>
+                            <linearGradient id="paint0_linear" x1="13" y1="0.493164" x2="13" y2="24.3388" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#18ACFE"/>
+                            <stop offset="1" stop-color="#0062E0"/>
+                            </linearGradient>
+                            <clipPath id="clip0">
+                            <rect width="25" height="25" fill="white" transform="translate(0.5 0.5)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <span>Sign up with Facebook</span>
+                    </a>
+                    <h4 class="auth-form__text">Or sign up with your Email</h4>
+                    <div class="input-group auth-form__input-group">
+                        <input type="email" class="input-group__input" placeholder="Email">
+                    </div>
+                    <div class="input-group auth-form__input-group">
+                        <a href="restore-password.html" class="input-group__link">Forgot?</a>
+                        <input type="password" class="input-group__input" placeholder="Password">
+                    </div>
+                    <label for="terms-privacy" class="square-checkbox auth-form__checkbox">
+                        <input type="checkbox" class="square-checkbox__input" id="terms-privacy">
+                        <span class="square-checkbox__icon"></span>
+                        <span class="square-checkbox__label">I accept <a href="#">Terms & Privacy</a></span>
+                    </label>
+                    <button class="auth-form__btn btn btn--green">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

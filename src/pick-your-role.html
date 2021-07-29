@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Buddy Board - Pick your role</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="auth">
+                <a href="/" class="logotype">
+                    <img src="img/dist/logotype.svg" alt="goBuddy">
+                </a>
+                <form action="#" class="auth-form">
+                    <h3 class="auth-form__title">Pick your role</h3>
+                    <div class="auth-form__inner">
+                        <label for="role-01" class="role-checkbox auth-form__role">
+                            <input type="radio" class="role-checkbox__input" name="your-role" id="role-01">
+                            <span class="role-checkbox__image" style="background-image: url(img/dist/role-01.png);"></span>
+                            <span class="role-checkbox__label">Streamer</span>
+                        </label>
+                        <label for="role-02" class="role-checkbox auth-form__role">
+                            <input type="radio" class="role-checkbox__input" name="your-role" id="role-02">
+                            <span class="role-checkbox__image" style="background-image: url(img/dist/role-02.png);"></span>
+                            <span class="role-checkbox__label">Viewer</span>
+                        </label>
+                    </div>
+                    <a href="#" class="auth-form__sign-up btn btn--blue">
+                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.1921 2.95923H4.80469V19.039H9.62381V22.4051L12.3603 19.6686H17.4457L22.1921 14.9222V2.95923Z" fill="white"/>
+                            <path d="M4.02051 2.0625L2.55078 5.81738V21.1641H7.77539V23.9375H10.7148L13.4883 21.1641H17.7363L23.4492 15.4512V2.0625H4.02051ZM21.4912 14.4697L18.2246 17.7363H13L10.2266 20.5098V17.7363H5.81738V4.02051H21.4912V14.4697ZM18.2246 7.77539V13.4834H16.2666V7.77539H18.2246ZM13 7.77539V13.4834H11.042V7.77539H13Z" fill="#9147FF"/>
+                        </svg>
+                        <span>Sign up with Twitch</span>
+                    </a>
+                    <label for="terms-privacy" class="square-checkbox auth-form__checkbox auth-form__checkbox--center">
+                        <input type="checkbox" class="square-checkbox__input" id="terms-privacy">
+                        <span class="square-checkbox__icon"></span>
+                        <span class="square-checkbox__label">I accept <a href="#">Terms & Privacy</a></span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

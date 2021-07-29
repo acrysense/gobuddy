@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Buddy Board - Navigation</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+    <style>
+        .nav-pages {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav-pages__item {
+            padding-left: 20px;
+        }
+        .nav-pages__item:first-child {
+            border-bottom: 2px solid #031059;
+        }
+        .nav-pages__item + .nav-pages__item {
+            margin-top: 16px;
+        }
+        .nav-pages__title {
+            padding: 18px 0 14px;
+            min-height: 59px;
+            font-family: "Commissioner", sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+        }
+        .nav-pages__link {
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+        }
+        .nav-pages__link:hover {
+            border-bottom: 1px solid #031059;
+        }
+
+        @media (min-width: 992px) {
+            .nav-pages__list {
+                width: 33.33%;
+            }
+            .nav-pages__list:nth-child(3n),
+            .nav-pages__list:nth-child(3n - 1) {
+                border-left: 2px solid #031059;
+            }
+            .nav-pages__list:nth-child(n + 4) {
+                padding-top: 48px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 991px) {
+            .nav-pages__list {
+                width: 50%;
+            }
+            .nav-pages__list:nth-child(2n) {
+                border-left: 2px solid #031059;
+            }
+            .nav-pages__list:nth-child(n + 3) {
+                padding-top: 32px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .nav-pages__list {
+                padding: 0 12px;
+                width: 100%;
+            }
+            .nav-pages__list:last-child,
+            .nav-pages__list:nth-last-child(2) {
+                display: none;
+            }
+            .nav-pages__list + .nav-pages__list {
+                padding-top: 40px;
+            }
+            .nav-pages__item {
+                padding-left: 0;
+            }
+            .nav-pages__item + .nav-pages__item {
+                margin-top: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="nav-pages">
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title">Authentication</h3>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="pick-your-role.html" class="nav-pages__link" target="_blank">Pick your role</a>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="sign-up.html" class="nav-pages__link" target="_blank">Sign Up</a>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="sign-in.html" class="nav-pages__link" target="_blank">Sign In</a>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="restore-password.html" class="nav-pages__link" target="_blank">Password recovery</a>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="restore-password-message.html" class="nav-pages__link" target="_blank">Password recovery message</a>
+                    </li>
+                </ul>
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title">Streamer</h3>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="dashboard.html" class="nav-pages__link" target="_blank">Dashboard</a>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="your-buddy.html" class="nav-pages__link" target="_blank">Your Buddy</a>
+                    </li>
+                </ul>
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title"></h3>
+                    </li>
+                    <li class="nav-pages__item">
+                        <a href="index.html" class="nav-pages__link" target="_blank"></a>
+                    </li>
+                </ul>
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title"></h3>
+                    </li>
+                </ul>
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title"></h3>
+                    </li>
+                </ul>
+                <ul class="nav-pages__list">
+                    <li class="nav-pages__item">
+                        <h3 class="nav-pages__title"></h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>
