@@ -15,6 +15,7 @@ $blue-7-color: #020D48;
 $blue-8-color: #020A36;
 $blue-9-color: #010624;
 $blue-legacy-color: #18335E;
+$contra-blue-color: #E9E7FC;
 $yellow-color: #FEDA3D;
 $orange-color: #FB8B01;
 $red-color: #E82728;
@@ -106,6 +107,9 @@ svg line {
     border-radius: 16px;
     box-shadow: $blue-shadow;
     transition: background 0.4s, box-shadow 0.1s;
+    span + svg {
+        margin-left: 7px;
+    }
     &:focus {
         outline: none;
         box-shadow: $blue-shadow;
@@ -161,6 +165,82 @@ svg line {
     }
 }
 
+.input-shell {
+    position: relative;
+    width: 100%;
+    &--xl {
+        max-width: 380px;
+    }
+    &--lg {
+        max-width: 322px;
+    }
+    &--md {
+        max-width: 164px;
+    }
+    &--sm {
+        max-width: 133px;
+    }
+    &__input {
+        display: block;
+        padding: 11px;
+        width: 100%;
+        appearance: none;
+        font-size: 16px;
+        font-weight: normal;
+        color: $white-color;
+        background: $blue-4-color;
+        border: 2px solid rgba($white-color, 0.1);
+        border-radius: 10px;
+        transition: border 0.4s;
+        &:hover {
+            border: 2px solid rgba($green-color, 0.5);
+        }
+        &:focus {
+            outline: none;
+            border: 2px solid $green-color;
+        }
+    }
+    &__input[disabled] {
+        color: rgba($white-color, 0.1);
+        &:hover {
+            border: 2px solid rgba($white-color, 0.1);
+        }
+    }
+    &__input[type=number] {
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            display: none;
+            appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.input-link {
+    display: block;
+    padding-bottom: 4px;
+    width: 100%;
+    appearance: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: $green-color;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid $green-color;
+    border-radius: 0;
+    transition: color 0.4s,  border 0.4s;
+    &:hover {
+        color: $yellow-color;
+        border-bottom: 2px solid $yellow-color;
+    }
+    &:focus {
+        outline: none;
+        color: $orange-color;
+        border-bottom: 2px solid $orange-color;
+    }
+}
+
 .input-group {
     position: relative;
     display: flex;
@@ -213,6 +293,105 @@ svg line {
             border: 2px solid $blue-6-color;
         }
     }
+    &__input[type=number] {
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            display: none;
+            appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.select {
+    .ss-single-selected {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px;
+        height: auto;
+        font-size: 16px;
+        font-weight: normal;
+        color: $white-color;
+        background: $blue-4-color;
+        border: 2px solid rgba($white-color, 0.1);
+        border-radius: 10px;
+    }
+    .ss-single-selected .placeholder {
+        line-height: 1.25;
+    }
+    .ss-single-selected .ss-arrow {
+        margin: 0;
+        min-width: 11px;
+        min-height: 11px;
+        max-width: 11px;
+        max-height: 11px;
+        background-image: url(../img/dist/sprite.svg#icon-caret);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: transform 0.3s;
+    }
+    .ss-single-selected .ss-arrow span {
+        padding: 0;
+        border: 0;
+    }
+    .ss-single-selected.ss-open-below,
+    .ss-single-selected.ss-open-above {
+        border-radius: 10px;
+        .ss-arrow {
+            transform: rotate(-180deg);
+        }
+    }
+    .ss-single-selected.ss-open-below + * {
+        margin-top: 5px;
+    }
+    .ss-single-selected.ss-open-above + * {
+        transform: scale(1) translateY(-5px);
+    }
+    .ss-content .ss-search {
+        display: none;
+    }
+    .ss-content {
+        z-index: 99!important;
+        color: $white-color;
+        background: $blue-4-color;
+        border: 2px solid rgba($white-color, 0.1);
+        border-radius: 10px;
+    }
+    .ss-content .ss-list {
+        padding: 0;
+        max-height: 198px;
+    }
+    .ss-content .ss-list .ss-option {
+        padding: 9px 11px;
+        font-size: 16px;
+        font-weight: normal;
+        color: $white-color;
+        transition: all 0.4s;
+    }
+    .ss-content .ss-list .ss-option + .ss-option {
+        border-top: 2px solid rgba($white-color, 0.1);
+    }
+    .ss-content .ss-list .ss-option.ss-disabled:not(.ss-option-selected) {
+        display: none;
+    }
+    .ss-content .ss-list .ss-option.ss-disabled {
+        color: inherit;
+        background: none;
+        cursor: pointer;
+    }
+    .ss-content .ss-list .ss-option:hover, .ss-content .ss-list .ss-option.ss-highlighted {
+        opacity: 1;
+        color: $yellow-color;
+        background: none;
+    }
+    .ss-arrow .arrow-down {
+        width: auto;
+        height: auto;
+        background: none;
+    }
 }
 
 .square-checkbox {
@@ -264,6 +443,54 @@ svg line {
     }
 }
 
+.circle-checkbox {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    &__input {
+        display: none;
+        &:checked ~ .circle-checkbox__icon::before {
+            opacity: 1;
+        }
+    }
+    &__icon {
+        position: relative;
+        display: block;
+        margin-right: 8px;
+        min-width: 22px;
+        min-height: 22px;
+        max-width: 22px;
+        max-height: 22px;
+        background-color: $contra-blue-color;
+        border: 2px solid $blue-5-color;
+        border-radius: 50%;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 14px;
+            height: 14px;
+            opacity: 0;
+            background: $green-color;
+            border: 2px solid $blue-5-color;
+            border-radius: 50%;
+            transition: opacity 0.3s;
+        }
+    }
+    &__label {
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+        text-align: left;
+        color: $white-color;
+        user-select: none;
+    }
+}
+
 .role-checkbox {
     display: block;
     margin: 0;
@@ -271,7 +498,7 @@ svg line {
     &__input {
         display: none;
         &:checked ~ .role-checkbox__image {
-            background-color: #45D19D;
+            background-color: $green-color;
             border: 4px solid $orange-color;
         }
         &:checked ~ .role-checkbox__label {

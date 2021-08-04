@@ -2,6 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // INPUTMASK
     Inputmask().mask(document.querySelectorAll('input'));
 
+    // SLIMSELECT
+    const selects = document.querySelectorAll('.select')
+
+    selects.forEach(item => {
+        new SlimSelect({
+            select: item
+        })
+    })
+
     // SMOOTH SCROLL
     function currentYPosition() {
         // Firefox, Chrome, Opera, Safari
@@ -184,5 +193,102 @@ document.addEventListener('DOMContentLoaded', function () {
             gettingStartedClose.classList.add('getting-started__close--hidden')
             gettingStartedWrapper.classList.remove('getting-started__wrapper--active')
         })
+    }
+    
+    // TABS
+    const tabsItems = document.querySelectorAll('.tabs__item')
+
+    if (tabsItems) {
+        tabsItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.tabs__item').forEach((child) => child.classList.remove('tabs__item--active'))
+                document.querySelectorAll('.tabs__content').forEach((child) => child.classList.remove('tabs__content--active'))
+    
+                item.classList.add('tabs__item--active')
+                document.querySelectorAll('.tabs__content')[i].classList.add('tabs__content--active')
+            })
+        })
+    }
+
+    // FORM PAY NOW
+    const methodsFormRadio = document.querySelectorAll('.methods-form__radio input');
+    const methodsFormBtn = document.querySelector('.methods-form__btn')
+
+    if (methodsFormBtn) {
+        methodsFormBtn.addEventListener('click', (event) => {
+            event.preventDefault()
+            let checkedRadioNumber = 0
+
+            methodsFormRadio.forEach((item, i) => {
+                if (item.checked) {
+                    checkedRadioNumber = item.dataset.id
+                }
+            })
+
+            if (checkedRadioNumber != 0) {
+                document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))
+                if (!modalOverlay.classList.contains('modal-overlay--active')) {
+                    modalOverlay.classList.add('modal-overlay--active')
+                }
+                document.body.classList.add('scroll-disabled')
+                document.getElementById(checkedRadioNumber).classList.add('modal--active')
+            }
+        });
+    }
+
+    // MODAL
+    const modalBtn = document.querySelectorAll('.modal-btn'),
+        modal = document.querySelectorAll('.modal'),
+        modalClose = document.querySelectorAll('.modal__close'),
+        modalOverlay = document.querySelector('.modal-overlay')
+    
+    if (modalBtn) {
+        modalBtn.forEach((item, i) => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))
+                if (!modalOverlay.classList.contains('modal-overlay--active')) {
+                    modalOverlay.classList.add('modal-overlay--active')
+                }
+                document.body.classList.add('scroll-disabled')
+
+                const modalID = item.dataset.id
+                document.getElementById(modalID).classList.add('modal--active')
+            });
+        });
+    }
+
+    document.body.addEventListener('keyup', (event) => {
+        let key = event.keyCode;
+
+        if (modal && modalOverlay.classList.contains('modal-overlay--active')) {
+            if (key == 27) {
+                document.body.classList.remove('scroll-disabled')
+                document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))
+                modalOverlay.classList.remove('modal-overlay--active')
+            };
+        }
+    }, false);
+
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', () => {
+            if (modal && modalOverlay.classList.contains('modal-overlay--active')) {
+                document.body.classList.remove('scroll-disabled')
+                document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))
+                modalOverlay.classList.remove('modal-overlay--active')
+            }
+        });
+    }
+
+    if (modalClose) {
+        modalClose.forEach((item) => {
+            item.addEventListener('click', () => {
+                document.body.classList.remove('scroll-disabled')
+                document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))
+                modalOverlay.classList.remove('modal-overlay--active')
+            });
+        });
     }
 });
