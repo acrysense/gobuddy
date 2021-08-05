@@ -148,6 +148,18 @@ svg line {
             box-shadow: $blue-shadow-active;
         }
     }
+    &--discord {
+        padding: 8px 50px;
+        background: #5865F2;
+        &:hover,
+        &:focus,
+        &:active {
+            background: linear-gradient(0deg, rgba(6, 32, 179, 0.5), rgba(6, 32, 179, 0.5)), #5865F2;
+        }
+        &:active {
+            box-shadow: $blue-shadow-active;
+        }
+    }
     &--link {
         padding: 5.5px 21px;
         font-size: 16px;
@@ -805,6 +817,70 @@ svg line {
     &:active {
         svg path {
             stroke: $orange-color;
+        }
+    }
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: fit-content;
+    &__input {
+        position: relative;
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        height: 18px;
+        background: $blue-1-color;
+        border: 1px solid $blue-6-color;
+        border-radius: 26px;
+        appearance: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: $white-color;
+            border: 1px solid $blue-6-color;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            margin-left: 4px;
+            width: 8px;
+            height: 8px;
+            border: 1px solid $blue-6-color;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        &:checked {
+            background: $green-color;
+            &::before {
+                margin-left: 12px;
+            }
+            &:after {
+                margin-left: 16px;
+            }
+        }
+    }
+    &__input[disabled] {
+        &::before {
+            background: $primary-color;
+        }
+        &::after {
+            margin-left: 1.25rem;
         }
     }
 }
