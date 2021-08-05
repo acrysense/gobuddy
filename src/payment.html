@@ -119,20 +119,20 @@
                             <div class="payment__methods">
                                 <div class="methods-form" novalidate>
                                     <div class="methods-form__list">
-                                        <label for="methods-01" class="circle-checkbox methods-form__radio">
-                                            <input type="radio" class="circle-checkbox__input" name="methods" id="methods-01" data-id="paypal-paynow">
-                                            <span class="circle-checkbox__icon"></span>
-                                            <span class="circle-checkbox__label">PayPal</span>
+                                        <label for="methods-01" class="circle-radio methods-form__radio">
+                                            <input type="radio" class="circle-radio__input" name="methods" id="methods-01" data-id="paypal-paynow">
+                                            <span class="circle-radio__icon"></span>
+                                            <span class="circle-radio__label">PayPal</span>
                                         </label>
-                                        <label for="methods-02" class="circle-checkbox methods-form__radio">
-                                            <input type="radio" class="circle-checkbox__input" name="methods" id="methods-02" data-id="card-paynow">
-                                            <span class="circle-checkbox__icon"></span>
-                                            <span class="circle-checkbox__label">Card</span>
+                                        <label for="methods-02" class="circle-radio methods-form__radio">
+                                            <input type="radio" class="circle-radio__input" name="methods" id="methods-02" data-id="card-paynow">
+                                            <span class="circle-radio__icon"></span>
+                                            <span class="circle-radio__label">Card</span>
                                         </label>
-                                        <label for="methods-03" class="circle-checkbox methods-form__radio">
-                                            <input type="radio" class="circle-checkbox__input" name="methods" id="methods-03" data-id="bank-paynow">
-                                            <span class="circle-checkbox__icon"></span>
-                                            <span class="circle-checkbox__label">Bank transfer</span>
+                                        <label for="methods-03" class="circle-radio methods-form__radio">
+                                            <input type="radio" class="circle-radio__input" name="methods" id="methods-03" data-id="bank-paynow">
+                                            <span class="circle-radio__icon"></span>
+                                            <span class="circle-radio__label">Bank transfer</span>
                                         </label>
                                     </div>
                                     <button class="methods-form__btn btn btn--green">
@@ -205,8 +205,8 @@
                                             <path d="M13 1L4.75 10L1 5.90909" stroke="#010624" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </a>
-                                    <a href="" class="tabs__link">Edit</a>
-                                    <a href="" class="tabs__link">Delete</a>
+                                    <a href="" class="tabs__edit">Edit</a>
+                                    <a href="" class="tabs__edit">Delete</a>
                                 </div>
                             </div>
                             <div class="tabs__inner">
@@ -252,7 +252,7 @@
                                     </div>
                                 </div>
                                 <div class="tabs__group">
-                                    <div class="input-shell input-shell--sm tabs__input-shell">
+                                    <div class="input-shell input-shell--m tabs__input-shell">
                                         <input type="number" class="input-shell__input" value="50">
                                     </div>
                                     <span class="tabs__text">USD</span>
@@ -260,18 +260,30 @@
                             </div>
                             <div class="tabs__inner">
                                 <span class="tabs__text">Auto-pay method</span>
-                                <select class="select">
-                                    <option value="0" disabled selected>Card ending with XXXX</option>
-                                    <option value="1">Card ending with XXXX</option>
-                                    <option value="2">Card ending with XXXX</option>
-                                    <option value="3">Card ending with XXXX</option>
-                                    <option value="4">Card ending with XXXX</option>
-                                    <option value="5">Card ending with XXXX</option>
-                                    <option value="6">Card ending with XXXX</option>
-                                </select>
+                                <div class="select-box tabs__select">
+                                    <div class="select-box__container">
+                                        <div class="select-box__option select-box__option--active">
+                                            <input type="radio" class="select-box__radio" id="card-ending-01" name="card-ending">
+                                            <label for="card-ending-01" class="select-box__label">Card ending with XXXX</label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="card-ending-02" name="card-ending">
+                                            <label for="card-ending-02" class="select-box__label">Card ending with XXXX</label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="card-ending-03" name="card-ending">
+                                            <label for="card-ending-03" class="select-box__label">Card ending with XXXX</label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="card-ending-04" name="card-ending">
+                                            <label for="card-ending-04" class="select-box__label">Card ending with XXXX</label>
+                                        </div>
+                                    </div>
+                                    <span class="select-box__selected">Card ending with XXXX</span> 
+                                </div>
                             </div>
                         </div>
-                        <button class="tabs__confirm btn btn--green">Confirm</button>
+                        <button class="tabs__submit tabs__submit--center btn btn--green">Confirm</button>
                     </div>
                     <div class="tabs__content">
                         <div class="tabs__wrapper">
@@ -289,7 +301,7 @@
                         <div class="tabs__wrapper">
                             <div class="tabs__inner">
                                 <span class="tabs__text">Background color:</span>
-                                <div class="input-shell input-shell--md">
+                                <div class="input-shell input-shell--sm">
                                     <input type="text" class="input-shell__input" value="#0E9462">
                                     <div class="colors">
                                         <div class="colors__current" style="background-color: #0E9462;"></div>
@@ -422,7 +434,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <a href="" class="tabs__btn btn btn--green">Save</a>
+                                    <button class="tabs__submit btn btn--green">Save</button>
                                 </div>
                             </div>
                         </div>
@@ -522,6 +534,7 @@
                 <form action="#" class="modal-form">
                     <div class="modal-form__group">
                         <div class="input-group modal-form__input-group">
+                            <a href="restore-password.html" class="input-group__link">Forgot?</a>
                             <input type="password" class="input-group__input" placeholder="Password">
                         </div>
                     </div>
@@ -546,6 +559,7 @@
                 <form action="#" class="modal-form">
                     <div class="modal-form__group">
                         <div class="input-group modal-form__input-group">
+                            <a href="restore-password.html" class="input-group__link">Forgot?</a>
                             <input type="password" class="input-group__input" placeholder="Password">
                         </div>
                     </div>
@@ -573,6 +587,7 @@
                 <form action="#" class="modal-form">
                     <div class="modal-form__group">
                         <div class="input-group modal-form__input-group">
+                            <a href="restore-password.html" class="input-group__link">Forgot?</a>
                             <input type="password" class="input-group__input" placeholder="Password">
                         </div>
                     </div>
@@ -597,8 +612,7 @@
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.8155 65.5C11.8945 59 6.96026 51.2668 6.96026 42.3393C5.97358 21 24.23 8 37.0589 7C51.8617 7 55.8089 8.49984 66.6642 19" stroke="#04136B" stroke-width="6.09403" stroke-miterlimit="10" stroke-linecap="round"/>
                         <path d="M17.1983 69C9.74705 62.1809 4 52.3224 4 41.2843C4 20.6798 20.2399 4 40.301 4C51.5256 4 61.4577 8.14884 68.1447 16.3416" stroke="#45D19D" stroke-width="6.09403" stroke-miterlimit="10" stroke-linecap="round"/>
-                        <!--<path d="M65.8017 14C73.2529 20.8191 79 30.6776 79 41.7157C79 62.3202 62.7601 79 42.699 79C31.4744 79 21.5423 74.8512 14.8553 66.6584" stroke="#45D19D" stroke-width="6.09403" stroke-miterlimit="10" stroke-linecap="round"/>-->
-                    </svg>                                              
+                    </svg>
                     <svg width="58" height="57" viewBox="0 0 58 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 19.2003C14.0653 7.86164 27.1107 2.85494 38.1492 8.05798C49.1877 13.261 54.0618 26.6613 48.9965 38" stroke="#04136B" stroke-width="6.09403" stroke-miterlimit="10" stroke-linecap="round"/>
                         <path d="M9.14453 12.9243C17.7238 2.00242 33.4688 0.100841 44.3878 8.68234C55.3069 17.2638 57.208 33.0128 48.6287 43.9347" stroke="#45D19D" stroke-width="6.09403" stroke-miterlimit="10" stroke-linecap="round"/>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Buddy Board - Payment</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="/" class="logotype">
+                    <img src="img/dist/logotype.svg" alt="goBuddy">
+                </a>
+                <div class="header__inner">
+                    <a href="#" class="header__btn btn btn--sm btn--blue">
+                        <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.90171 3.41174L5.58761 5.33034C5.42219 6.062 5.48951 6.82769 5.78 7.51849C5.81141 7.58984 5.84282 7.66119 5.87815 7.73255V7.77615C5.87963 7.788 5.87963 7.79998 5.87815 7.81183L7.91587 11.7759C7.95513 11.8472 1.13134 17.274 1.13134 17.274L0.840796 19.2956C0.72299 19.8175 0.72299 20.3594 0.840796 20.8813C0.849201 20.9099 0.855759 20.939 0.860427 20.9685L0.907542 21.1389C0.950552 21.2862 1.00301 21.4306 1.06459 21.571C1.07529 21.6062 1.08841 21.6407 1.10385 21.6741L1.1706 21.8009L2.37203 24.1318C2.38668 24.1574 2.39979 24.1839 2.41129 24.2111L5.03009 29.2692C5.24376 29.6851 5.53699 30.0541 5.89283 30.3548C6.24866 30.6556 6.66003 30.8821 7.10314 31.0213L9.29005 31.7308L10.4954 34.0657C10.6295 34.3253 10.8131 34.5558 11.0355 34.7437C11.2579 34.9317 11.5149 35.0736 11.7917 35.1612C12.0684 35.2489 12.3596 35.2805 12.6485 35.2544C12.9375 35.2283 13.2184 35.1449 13.4754 35.0091L13.868 34.803L21.7205 30.6685C21.8407 30.6034 21.955 30.5278 22.0621 30.4425L22.1092 30.4029C22.1949 30.324 22.2737 30.2378 22.3448 30.1452C22.3683 30.1214 22.384 30.0977 22.4037 30.0739C22.4736 29.9838 22.5367 29.8883 22.5921 29.7885C22.6157 29.7528 22.6275 29.7171 22.6471 29.6814C22.6667 29.6458 22.7138 29.5308 22.7413 29.4555C22.7688 29.3802 22.7806 29.3366 22.7963 29.2771C22.812 29.2176 22.8277 29.1621 22.8395 29.1027L22.867 28.9402L23.2085 26.974L5.90171 3.41174Z" fill="#C81B00"/>
+                            <path d="M18.497 11.6285H18.4577C18.3321 11.573 18.2064 11.5255 18.0651 11.4818H17.9983C17.8773 11.444 17.754 11.4135 17.6293 11.3907H17.5468C17.4703 11.3746 17.393 11.3627 17.3152 11.355C17.2618 11.3491 17.2106 11.3301 17.1662 11.2997C17.1217 11.2693 17.0852 11.2284 17.06 11.1806L12.5291 2.32888C12.209 1.70533 11.7138 1.19104 11.1054 0.850444C10.4971 0.509851 9.80274 0.358114 9.10935 0.414248H9.08579C8.98035 0.422669 8.87548 0.437228 8.77169 0.457853H8.74421C8.63697 0.477308 8.53081 0.502449 8.42619 0.53317L8.33196 0.556954L8.21024 0.620378L8.01393 0.687767C7.91578 0.731371 7.82155 0.774976 7.72732 0.826508H7.69983C7.30798 1.04268 6.96027 1.33187 6.67509 1.67878V1.70256C6.62848 1.75803 6.58522 1.81628 6.54552 1.87698L6.43951 1.99986L6.39632 2.07122C6.09782 2.55031 5.9165 3.09424 5.86735 3.65806C5.81819 4.22189 5.90261 4.78943 6.11364 5.3138C6.15996 5.43596 6.21372 5.55511 6.27461 5.67056L8.31233 9.6346C8.34902 9.70732 8.35727 9.79132 8.33545 9.8699C8.31363 9.94848 8.26332 10.0159 8.19454 10.0588L8.11994 10.1182C8.01566 10.1815 7.91475 10.2503 7.81762 10.3243L7.7391 10.3838C7.71161 10.4076 7.68805 10.4393 7.66057 10.4671C7.57755 10.5472 7.49891 10.6319 7.425 10.7208C7.40144 10.7445 7.37396 10.7683 7.3504 10.7961C7.31899 10.8317 7.29936 10.8714 7.27187 10.9071L7.10305 11.1568C7.10305 11.1885 7.06378 11.2123 7.04415 11.244V11.2638L7.0206 11.3193C6.95018 11.4465 6.88979 11.579 6.83999 11.7157L6.81643 11.7593C6.81643 11.7593 6.81643 11.7593 6.81643 11.7791C6.81158 11.7957 6.805 11.8116 6.7968 11.8267C6.77915 11.8773 6.74895 11.9224 6.70908 11.9578C6.6692 11.9932 6.621 12.0177 6.56908 12.0289L6.31387 12.1082L6.21179 12.1478L6.10186 12.1874C5.98014 12.235 5.86236 12.2865 5.74457 12.346C5.62678 12.4055 5.54826 12.457 5.45403 12.5165L5.34802 12.5918L5.18704 12.7107L5.0614 12.8217C5.02214 12.8574 4.97895 12.8891 4.94362 12.9248C4.90828 12.9604 4.85331 13.0159 4.81013 13.0635L4.71982 13.1586L4.59418 13.3172L4.52351 13.4084C4.48032 13.4678 4.44499 13.5273 4.40572 13.5868L4.35076 13.674C4.32327 13.7176 4.29972 13.7651 4.27616 13.8087C4.26853 13.8267 4.25933 13.844 4.24867 13.8603C4.24867 13.888 4.21726 13.9158 4.20549 13.9475C4.17795 13.9998 4.15433 14.0541 4.13481 14.11C4.13481 14.11 4.13481 14.11 4.13481 14.1338L4.09948 14.2131L4.04058 14.2884C4.02294 14.3389 3.99273 14.3841 3.95286 14.4195C3.91299 14.4549 3.86478 14.4794 3.81286 14.4906C3.72649 14.5143 3.64011 14.5461 3.55373 14.5738L3.43594 14.6174L3.32208 14.661C3.18757 14.7104 3.05641 14.7687 2.92946 14.8354C2.67068 14.9792 2.43064 15.155 2.21489 15.3587L2.17562 15.3944L2.01857 15.5608L1.92827 15.6679C1.89603 15.7044 1.86588 15.7428 1.83797 15.7828C1.79085 15.8463 1.74374 15.9057 1.70055 15.9731L1.66914 16.0246C1.17251 16.8011 0.993744 17.7419 1.17051 18.6488C1.22668 18.9222 1.31362 19.1882 1.42964 19.4416C1.43642 19.465 1.44563 19.4876 1.45712 19.509L1.48853 19.5764L1.51994 19.6438L2.71352 21.9905L2.74885 22.0539L5.37158 27.1279C5.58552 27.5443 5.8793 27.9137 6.23586 28.2145C6.59242 28.5153 7.00464 28.7415 7.44855 28.88L9.63154 29.5737L10.8369 31.9085C11.1086 32.4322 11.5749 32.8257 12.1336 33.0025C12.6923 33.1794 13.2977 33.1253 13.8169 32.852L14.1624 32.6696L14.2095 32.6498L22.062 28.5153C22.5809 28.2403 22.9707 27.7687 23.1459 27.204C23.321 26.6392 23.2673 26.0274 22.9964 25.5027L21.8186 23.2194C21.7805 23.1506 21.7706 23.0695 21.7911 22.9934L22.5174 19.9609C22.7447 19.0146 22.6233 18.017 22.1759 17.1544L20.146 13.2141C19.7847 12.5164 19.2049 11.9589 18.497 11.6285Z" fill="#E82728"/>
+                            <path d="M14.4618 14.6493V14.6541L14.457 14.6493H14.4618Z" fill="white"/>
+                            <path d="M21.791 26.1412L20.4012 23.4536C20.346 23.3476 20.3306 23.2251 20.358 23.1087L21.1943 19.6362C21.3419 19.0159 21.2624 18.3627 20.9705 17.7969L18.9328 13.8328C18.6978 13.3805 18.3141 13.025 17.8476 12.8275C17.3811 12.63 16.861 12.6028 16.3768 12.7507L11.308 2.96741C11.0336 2.46657 10.5761 2.09393 10.0332 1.92914C9.49031 1.76434 8.90511 1.82046 8.40266 2.08549C7.9002 2.35053 7.52034 2.80346 7.34425 3.3475C7.16816 3.89155 7.20981 4.48355 7.46029 4.997L10.5267 10.9431C10.1834 10.8723 9.82835 10.8865 9.49171 10.9843C9.15507 11.0822 8.84688 11.2609 8.59345 11.505C8.34002 11.7492 8.14887 12.0517 8.03633 12.3866C7.92379 12.7216 7.89319 13.079 7.94714 13.4285C7.59742 13.329 7.22853 13.3199 6.87441 13.402C6.52029 13.4841 6.19229 13.6548 5.92057 13.8983C5.64886 14.1419 5.44215 14.4505 5.31945 14.7958C5.19676 15.141 5.16201 15.5119 5.21841 15.8743C4.81863 15.7609 4.39499 15.7658 3.9979 15.8885C3.60081 16.0112 3.247 16.2465 2.97855 16.5664C2.71011 16.8863 2.53835 17.2773 2.4837 17.6929C2.42904 18.1085 2.49381 18.5313 2.67028 18.9108C2.68176 18.9393 2.69487 18.9671 2.70954 18.994L3.93846 21.3724C3.93846 21.4081 3.97379 21.4398 3.9895 21.4715C3.9975 21.4826 4.0041 21.4945 4.00913 21.5072L4.5431 22.5458L6.59259 26.5098C6.85833 27.0253 7.31588 27.4131 7.86469 27.5881L10.401 28.3809C10.5232 28.4207 10.6247 28.5076 10.6837 28.6227L12.0579 31.2825C12.1616 31.4828 12.3398 31.6332 12.5533 31.7009C12.7668 31.7685 12.9981 31.7478 13.1965 31.6433L21.4416 27.2828C21.6365 27.1768 21.7823 26.9977 21.8477 26.7842C21.913 26.5706 21.8927 26.3397 21.791 26.1412ZM8.17094 4.62042C8.00329 4.29556 7.97032 3.91676 8.0793 3.56736C8.18827 3.21797 8.43026 2.92658 8.75202 2.75732C9.07378 2.58806 9.44897 2.55478 9.79503 2.6648C10.1411 2.77482 10.4297 3.01914 10.5974 3.344L15.67 13.0995L14.0996 13.924L13.2319 14.3799L13.0081 13.9518L8.17094 4.62042ZM9.45482 11.8469C9.7768 11.6777 10.152 11.6441 10.4984 11.7533C10.8449 11.8624 11.1345 12.1056 11.3041 12.4296L12.5291 14.7644L10.5659 15.803C10.3963 15.8891 10.2586 16.0281 10.1733 16.1994L9.30562 14.5226L8.913 13.7298C8.82519 13.5704 8.76954 13.3951 8.74927 13.2139C8.72899 13.0328 8.7445 12.8493 8.79488 12.6742C8.84527 12.4991 8.92953 12.3358 9.04281 12.1938C9.15608 12.0518 9.29612 11.9339 9.45482 11.8469ZM6.70645 14.2887C7.02891 14.1199 7.40446 14.0868 7.75099 14.1968C8.09752 14.3067 8.38685 14.5507 8.55571 14.8754L9.78462 17.2538L9.98879 17.6502C10.115 17.9672 10.1203 18.3203 10.0034 18.641C9.88662 18.9617 9.65608 19.2272 9.35647 19.3861C9.05686 19.545 8.7095 19.5859 8.38168 19.5011C8.05386 19.4162 7.7689 19.2115 7.582 18.9266L6.51407 16.8653L6.14893 16.1558C5.98142 15.8307 5.94809 15.4519 6.05622 15.1021C6.16436 14.7523 6.40517 14.4599 6.72608 14.2887H6.70645ZM4.64518 20.976L3.67933 19.105L3.42019 18.6016C3.2515 18.2757 3.21795 17.8955 3.32693 17.5446C3.4359 17.1937 3.67847 16.9009 4.00128 16.7306C4.32408 16.5602 4.70068 16.5264 5.04821 16.6364C5.39575 16.7464 5.68577 16.9913 5.85446 17.3172L6.11359 17.8246L6.87921 19.3032L7.08337 19.6996C7.11051 19.7489 7.13287 19.8006 7.15012 19.8542C7.18956 19.9561 7.21595 20.0627 7.22864 20.1713C7.26452 20.4608 7.20888 20.7542 7.06967 21.0098C6.93047 21.2654 6.71482 21.47 6.45354 21.5944C6.19226 21.7188 5.89871 21.7567 5.61483 21.7026C5.33096 21.6485 5.07128 21.5052 4.8729 21.2932C4.78188 21.1994 4.70514 21.0925 4.64518 20.976ZM21.0647 26.5772L12.8196 30.9377C12.8123 30.9449 12.8024 30.949 12.7921 30.949C12.7818 30.949 12.772 30.9449 12.7646 30.9377L11.3905 28.2778C11.3127 28.1265 11.2061 27.9922 11.0767 27.8827C10.9473 27.7731 10.7978 27.6905 10.6366 27.6396L8.10419 26.8468C7.76466 26.7333 7.48273 26.4899 7.31894 26.1689L5.4422 22.5379C5.93039 22.6393 6.43831 22.5664 6.87921 22.3317C6.97098 22.2846 7.05894 22.2303 7.14226 22.1692C7.22154 22.1086 7.29755 22.0438 7.36999 21.975C7.42403 21.9238 7.47515 21.8695 7.52311 21.8125C7.61955 21.7026 7.70259 21.5815 7.77046 21.4517C7.81442 21.3708 7.85375 21.2874 7.88825 21.202C7.92041 21.1164 7.94794 21.029 7.9707 20.9404C8.01485 20.7628 8.03727 20.5804 8.03745 20.3973C8.36938 20.5228 8.72677 20.564 9.07818 20.5173C9.4296 20.4706 9.76427 20.3375 10.0528 20.1296C10.3413 19.9217 10.5747 19.6455 10.7327 19.3251C10.8906 19.0047 10.9682 18.6501 10.9586 18.2924C11.1947 18.55 11.4824 18.7539 11.8026 18.8906C12.1228 19.0273 12.4681 19.0936 12.8157 19.0852C13.436 19.0713 14.0437 18.9053 14.5864 18.6016L14.9437 18.4113L15.7289 18.0149L15.8624 18.2726C15.1636 18.998 14.2919 21.2535 14.1545 22.2604C14.1462 22.3128 14.1484 22.3664 14.161 22.4179C14.1736 22.4695 14.1963 22.518 14.2278 22.5605C14.2593 22.603 14.2989 22.6387 14.3443 22.6655C14.3897 22.6922 14.44 22.7095 14.4922 22.7163C14.5767 22.7307 14.6636 22.7167 14.7395 22.6766C14.796 22.6479 14.8447 22.6059 14.8816 22.5542C14.9185 22.5024 14.9425 22.4424 14.9515 22.3793C15.0968 21.4517 15.9449 19.2755 16.632 18.6531C16.6991 18.5938 16.7442 18.5132 16.7599 18.4246C16.7756 18.336 16.7609 18.2446 16.7184 18.1655L16.5377 17.8127L16.2629 17.2776C16.2396 17.2303 16.2072 17.1883 16.1676 17.1538C16.128 17.1194 16.082 17.0933 16.0323 17.077C15.9825 17.0608 15.9301 17.0547 15.878 17.0592C15.8259 17.0637 15.7752 17.0786 15.7289 17.1032L15.67 17.1349L14.5707 17.7136L14.2291 17.896C13.8797 18.0899 13.4976 18.2163 13.1023 18.2686H12.9806C12.7039 18.2975 12.4244 18.2576 12.1665 18.1526C11.9085 18.0476 11.6799 17.8806 11.5004 17.6661L11.4219 17.5709C10.9586 17.0041 10.8447 16.6671 10.8683 16.5641C10.8683 16.5641 10.8683 16.5442 10.9115 16.5244L12.0893 15.906L12.9217 15.4779L14.4451 14.6851L16.3571 13.6782C16.5167 13.5941 16.6911 13.5426 16.8704 13.5265C17.0497 13.5105 17.2304 13.5303 17.4022 13.5847C17.5739 13.6392 17.7333 13.7273 17.8713 13.844C18.0093 13.9608 18.1232 14.1038 18.2064 14.2649L20.2441 18.2052C20.4441 18.5841 20.5039 19.0225 20.4129 19.442L19.5963 22.9184C19.5214 23.2244 19.5605 23.5475 19.7062 23.8262L21.0961 26.5178C21.0995 26.5236 21.1013 26.5302 21.1014 26.537C21.1015 26.5437 21.0999 26.5504 21.0968 26.5563C21.0936 26.5623 21.0891 26.5673 21.0834 26.571C21.0778 26.5746 21.0714 26.5768 21.0647 26.5772Z" fill="white"/>
+                        </svg>
+                        <span>Download goBuddy button</span>
+                    </a>
+                    <a href="#" class="header__btn btn btn--sm btn--blue">
+                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0625 3.9082L9.02734 2.67285V11.335H0.0625V3.9082ZM0.0625 19.7578L9.02734 20.9932V12.4385H0.0625V19.7578ZM10.0137 21.125L21.9375 22.7705V12.4385H10.0137V21.125ZM10.0137 2.54102V11.335H21.9375V0.895508L10.0137 2.54102Z" fill="white"/>
+                        </svg>
+                        <span>goBuddy app</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard">
+        <div class="container">
+            <div class="dashboard__wrapper">
+                <aside class="sidebar">
+                    <div class="sidebar__group">
+                        <h3 class="sidebar__title">control panel</h3>
+                        <ul class="sidebar__list">
+                            <li class="sidebar__item">
+                                <a href="dashboard.html" class="sidebar__link">Dashboard</a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="your-buddy.html" class="sidebar__link">Your Buddy</a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="buddy-settings.html" class="sidebar__link">Buddy settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar__group">
+                        <h3 class="sidebar__title">For you and fans</h3>
+                        <ul class="sidebar__list">
+                            <li class="sidebar__item">
+                                <a href="tips.html" class="sidebar__link">Tips</a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="collectibles.html" class="sidebar__link">Collectibles & skins</a>
+                            </li>
+                            <li class="sidebar__item sidebar__item--soon">
+                                <a href="#" class="sidebar__link">Experiences</a>
+                            </li>
+                            <li class="sidebar__item sidebar__item--soon">
+                                <a href="#" class="sidebar__link">Mini-games</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar__group">
+                        <h3 class="sidebar__title">Settings</h3>
+                        <ul class="sidebar__list">
+                            <li class="sidebar__item sidebar__item--active">
+                                <a href="account.html" class="sidebar__link">Account</a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="payment.html" class="sidebar__link">Page & payment </a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="faq.html" class="sidebar__link">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="viewer-settings.html" class="sidebar__btn">
+                        <span>Switch to viewer settings</span>
+                        <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 11.0001L5 6.33341L1 1.66675" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </aside>
+                <div class="dashboard__content tabs">
+                    <div class="dashboard__inner dashboard__inner--border">
+                        <ul class="tabs__list">
+                            <li class="tabs__item tabs__item--active">
+                                <button class="tabs__button">Setting</button>
+                            </li>
+                            <li class="tabs__item">
+                                <button class="tabs__button">Profile</button>
+                            </li>
+                            <li class="tabs__item">
+                                <button class="tabs__button">Integrations</button>
+                            </li>
+                        </ul>
+                        <a href="#" class="link">gobuddy.ai/myweblink</a>
+                    </div>
+                    <div class="tabs__content tabs__content--active">
+                        <div class="tabs__wrapper tabs__wrapper--ultra">
+                            <div class="tabs__inner tabs__inner--start">
+                                <span class="tabs__text">Nickname:</span>
+                                <div class="tabs__column">
+                                    <div class="input-shell input-shell--lg">
+                                        <input type="email" class="input-shell__input" placeholder="myweblink">
+                                    </div>
+                                    <a href="#" class="link tabs__link">gobuddy.ai/myweblink</a>
+                                </div>
+                            </div>
+                            <div class="tabs__inner tabs__inner--start">
+                                <span class="tabs__text">Nickname:</span>
+                                <div class="tabs__column">
+                                    <div class="input-shell input-shell--lg">
+                                        <input type="email" class="input-shell__input input-shell__input--error" placeholder="myweblink">
+                                        <div class="input-shell__error">The address is already taken. Try another.</div>
+                                    </div>
+                                    <a href="#" class="link tabs__link">gobuddy.ai/myweblink</a>
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">E-mail:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="email" class="input-shell__input" placeholder="you@domain.com">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Platform you use:</span>
+                                <div class="select-box select-box--lg tabs__select">
+                                    <div class="select-box__container">
+                                        <div class="select-box__option select-box__option--active">
+                                            <input type="radio" class="select-box__radio" id="platform-01" name="platform">
+                                            <label for="platform-01" class="select-box__label">
+                                                <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M22.1921 2.95923H4.80469V19.039H9.62381V22.4051L12.3603 19.6686H17.4457L22.1921 14.9222V2.95923Z" fill="white"/>
+                                                    <path d="M4.02051 2.0625L2.55078 5.81738V21.1641H7.77539V23.9375H10.7148L13.4883 21.1641H17.7363L23.4492 15.4512V2.0625H4.02051ZM21.4912 14.4697L18.2246 17.7363H13L10.2266 20.5098V17.7363H5.81738V4.02051H21.4912V14.4697ZM18.2246 7.77539V13.4834H16.2666V7.77539H18.2246ZM13 7.77539V13.4834H11.042V7.77539H13Z" fill="#9147FF"/>
+                                                </svg>
+                                                <span>Twitch</span>
+                                            </label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="platform-02" name="platform">
+                                            <label for="platform-02" class="select-box__label">
+                                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="6.63965" y="7.28955" width="13.4643" height="10.8006" fill="white"/>
+                                                    <path d="M24.2084 7.10777C23.9358 6.08129 23.1326 5.27287 22.1128 4.99852C20.2642 4.5 12.8519 4.5 12.8519 4.5C12.8519 4.5 5.43954 4.5 3.59097 4.99852C2.57114 5.27292 1.76793 6.08129 1.49531 7.10777C1 8.96832 1 12.8502 1 12.8502C1 12.8502 1 16.732 1.49531 18.5926C1.76793 19.6191 2.57114 20.3938 3.59097 20.6681C5.43954 21.1667 12.8519 21.1667 12.8519 21.1667C12.8519 21.1667 20.2642 21.1667 22.1128 20.6681C23.1326 20.3938 23.9358 19.6191 24.2084 18.5926C24.7037 16.732 24.7037 12.8502 24.7037 12.8502C24.7037 12.8502 24.7037 8.96832 24.2084 7.10777ZM10.4276 16.3746V9.32574L16.6229 12.8503L10.4276 16.3746Z" fill="#FF0000"/>
+                                                </svg>
+                                                <span>YouTube</span>
+                                            </label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="platform-03" name="platform">
+                                            <label for="platform-03" class="select-box__label">
+                                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <ellipse cx="12" cy="12.0044" rx="12" ry="11.9975" fill="white"/>
+                                                    <path d="M24 11.9954C24 5.36889 18.629 0 12 0C5.37097 0 0 5.36889 0 11.9954C0 17.9824 4.38823 22.945 10.125 23.8456V15.4629H7.07661V11.9954H10.125V9.35251C10.125 6.34642 11.9153 4.68593 14.6574 4.68593C15.9706 4.68593 17.3439 4.92003 17.3439 4.92003V7.8705H15.8303C14.34 7.8705 13.875 8.79531 13.875 9.74381V11.9954H17.2031L16.6708 15.4629H13.875V23.8456C19.6118 22.945 24 17.9824 24 11.9954Z" fill="url(#paint0_linear)"/>
+                                                    <defs>
+                                                    <linearGradient id="paint0_linear" x1="12" y1="0" x2="12" y2="23.8456" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#18ACFE"/>
+                                                    <stop offset="1" stop-color="#0062E0"/>
+                                                    </linearGradient>
+                                                    </defs>
+                                                </svg>                                                    
+                                                <span>Facebook</span>
+                                            </label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="platform-04" name="platform">
+                                            <label for="platform-04" class="select-box__label">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#2DAAE1"/>
+                                                    <path d="M19.0533 7.62433C18.5345 7.85457 17.9772 8.01021 17.3913 8.08017C17.9893 7.72208 18.4474 7.15464 18.6637 6.47929C18.0956 6.81668 17.474 7.0542 16.8257 7.18153C16.2981 6.61917 15.5457 6.26807 14.7134 6.26807C13.1158 6.26807 11.8201 7.56323 11.8201 9.16179C11.8201 9.38829 11.8456 9.60926 11.8946 9.82142C9.48961 9.70055 7.3574 8.54852 5.93021 6.79801C5.681 7.22553 5.53835 7.72261 5.53835 8.25296C5.53835 9.25678 6.04928 10.1425 6.82563 10.6613C6.36605 10.647 5.91655 10.523 5.51471 10.2995V10.336C5.51471 11.7382 6.51203 12.9074 7.83591 13.1733C7.59272 13.2399 7.3375 13.2747 7.07346 13.2747C6.88678 13.2747 6.70566 13.2571 6.52872 13.2238C6.89697 14.3731 7.96567 15.2096 9.23159 15.2333C8.24121 16.0096 6.9933 16.4724 5.63793 16.4724C5.40448 16.4724 5.17376 16.4585 4.94727 16.4312C6.22808 17.2525 7.74885 17.7319 9.38308 17.7319C14.7055 17.7319 17.6164 13.3225 17.6164 9.49859C17.6164 9.37305 17.6136 9.24845 17.6076 9.12429C18.1747 8.71409 18.6643 8.20617 19.0533 7.62433Z" fill="white"/>
+                                                </svg>
+                                                <span>Twitter</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <span class="select-box__selected">
+                                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22.1921 2.95923H4.80469V19.039H9.62381V22.4051L12.3603 19.6686H17.4457L22.1921 14.9222V2.95923Z" fill="white"/>
+                                            <path d="M4.02051 2.0625L2.55078 5.81738V21.1641H7.77539V23.9375H10.7148L13.4883 21.1641H17.7363L23.4492 15.4512V2.0625H4.02051ZM21.4912 14.4697L18.2246 17.7363H13L10.2266 20.5098V17.7363H5.81738V4.02051H21.4912V14.4697ZM18.2246 7.77539V13.4834H16.2666V7.77539H18.2246ZM13 7.77539V13.4834H11.042V7.77539H13Z" fill="#9147FF"/>
+                                        </svg>
+                                        <span>Twitch</span>
+                                    </span> 
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Link:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" placeholder="Your link for viewers">
+                                </div>
+                            </div>
+                            <div class="tabs__inner tabs__inner--start">
+                                <span class="tabs__text">Change password:</span>
+                                <div class="tabs__column">
+                                    <div class="input-shell input-shell--md tabs__input-shell">
+                                        <input type="text" class="input-shell__input" placeholder="New password">
+                                    </div>
+                                    <div class="input-shell input-shell--md tabs__input-shell">
+                                        <input type="text" class="input-shell__input" placeholder="Repeat new password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__inner tabs__inner--mt">
+                                <span class="tabs__text">Delete account</span>
+                                <a href="" class="tabs__btn btn btn--link modal-btn" data-id="delete-account">Click here to delete your account</a>
+                            </div>
+                            <a href="#" class="tabs__submit tabs__submit--center btn btn--green">Save</a>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <p class="tabs__description">Please fill your information to increase limits up to X USD.</p>
+                        <div class="account-status">
+                            <a href="#" class="account-status__item account-status__item--active">
+                                <div class="account-status__icon" style="background-image: url(img/dist/sprite.svg#icon-status-01);"></div>
+                                <span class="account-status__name">Basic</span>
+                            </a>
+                            <a href="#" class="account-status__item">
+                                <div class="account-status__icon" style="background-image: url(img/dist/sprite.svg#icon-status-02);"></div>
+                                <span class="account-status__name">Pro</span>
+                            </a>
+                            <a href="#" class="account-status__item">
+                                <div class="account-status__icon" style="background-image: url(img/dist/sprite.svg#icon-status-03);"></div>
+                                <span class="account-status__name">Hero</span>
+                            </a>
+                        </div>
+                        <div class="tabs__wrapper tabs__wrapper--ultra">
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Name:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="e.g. Kate">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Surname:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="e.g. Willson">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Date of birth:</span>
+                                <div class="tabs__group">
+                                    <div class="select-box select-box--sm tabs__select">
+                                        <div class="select-box__container">
+                                            <div class="select-box__option select-box__option--active">
+                                                <input type="radio" class="select-box__radio" id="date-day-01" name="date-day">
+                                                <label for="date-day-01" class="select-box__label">01</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-02" name="date-day">
+                                                <label for="date-day-02" class="select-box__label">02</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-03" name="date-day">
+                                                <label for="date-day-03" class="select-box__label">03</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-04" name="date-day">
+                                                <label for="date-day-04" class="select-box__label">04</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-05" name="date-day">
+                                                <label for="date-day-05" class="select-box__label">05</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-06" name="date-day">
+                                                <label for="date-day-06" class="select-box__label">06</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-07" name="date-day">
+                                                <label for="date-day-07" class="select-box__label">07</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-08" name="date-day">
+                                                <label for="date-day-08" class="select-box__label">08</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-09" name="date-day">
+                                                <label for="date-day-09" class="select-box__label">09</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-10" name="date-day">
+                                                <label for="date-day-10" class="select-box__label">10</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-day-11" name="date-day">
+                                                <label for="date-day-11" class="select-box__label">11</label>
+                                            </div>
+                                        </div>
+                                        <span class="select-box__selected">01</span> 
+                                    </div>
+                                    <div class="select-box tabs__select">
+                                        <div class="select-box__container">
+                                            <div class="select-box__option select-box__option--active">
+                                                <input type="radio" class="select-box__radio" id="date-month-01" name="date-month">
+                                                <label for="date-month-01" class="select-box__label">January</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-02" name="date-month">
+                                                <label for="date-month-02" class="select-box__label">February</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-03" name="date-month">
+                                                <label for="date-month-03" class="select-box__label">March</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-04" name="date-month">
+                                                <label for="date-month-04" class="select-box__label">April</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-05" name="date-month">
+                                                <label for="date-month-05" class="select-box__label">May</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-06" name="date-month">
+                                                <label for="date-month-06" class="select-box__label">June</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-07" name="date-month">
+                                                <label for="date-month-07" class="select-box__label">July</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-08" name="date-month">
+                                                <label for="date-month-08" class="select-box__label">August</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-09" name="date-month">
+                                                <label for="date-month-09" class="select-box__label">September</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-10" name="date-month">
+                                                <label for="date-month-10" class="select-box__label">October</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-11" name="date-month">
+                                                <label for="date-month-11" class="select-box__label">November</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="date-month-12" name="date-month">
+                                                <label for="date-month-12" class="select-box__label">December</label>
+                                            </div>
+                                        </div>
+                                        <span class="select-box__selected">January</span> 
+                                    </div>
+                                    <div class="select-box select-box--md tabs__select">
+                                        <div class="select-box__container">
+                                            <div class="select-box__option select-box__option--active">
+                                                <input type="radio" class="select-box__radio" id="resident-01" name="date-year">
+                                                <label for="date-year-01" class="select-box__label">1990</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="resident-02" name="date-year">
+                                                <label for="date-year-02" class="select-box__label">1991</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="resident-03" name="date-year">
+                                                <label for="date-year-03" class="select-box__label">1992</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="resident-04" name="date-year">
+                                                <label for="date-year-04" class="select-box__label">1993</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="resident-05" name="date-year">
+                                                <label for="date-year-05" class="select-box__label">1994</label>
+                                            </div>
+                                            <div class="select-box__option">
+                                                <input type="radio" class="select-box__radio" id="resident-06" name="date-year">
+                                                <label for="date-year-06" class="select-box__label">1995</label>
+                                            </div>
+                                        </div>
+                                        <span class="select-box__selected">1990</span> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Resident:</span>
+                                <div class="select-box">
+                                    <div class="select-box__container">
+                                        <div class="select-box__option select-box__option--active">
+                                            <input type="radio" class="select-box__radio" id="resident-01" name="resident">
+                                            <label for="resident-01" class="select-box__label">US</label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="resident-02" name="resident">
+                                            <label for="resident-02" class="select-box__label">UK</label>
+                                        </div>
+                                        <div class="select-box__option">
+                                            <input type="radio" class="select-box__radio" id="resident-03" name="resident">
+                                            <label for="resident-03" class="select-box__label">Canada</label>
+                                        </div>
+                                    </div>
+                                    <span class="select-box__selected">US</span> 
+                                </div>
+                            </div>
+                            <a href="#" class="tabs__submit tabs__submit--center btn btn--green">Submit</a>
+                        </div>
+                        <div class="tabs__wrapper">
+                            <div class="verification-info">
+                                <div class="verification-info__block">
+                                    <div class="verification-info__icon"></div>
+                                    <h3 class="verification-info__title">Please verify your identity</h3>
+                                    <ul class="verification-info__list">
+                                        <li class="verification-info__item">We need to verify your ID document and perform liveness check.</li>
+                                        <li class="verification-info__item">We accept driving license and passport.</li>
+                                    </ul>
+                                </div>
+                                <div class="verification-info__block">
+                                    <div class="verification-info__img">
+                                        <img src="img/dist/verification-img.png" alt="">
+                                    </div>
+                                    <p class="verification-info__help">Verification is performed by ZignSec.com (ZIGN on NASDAQ)</p>
+                                </div>
+                            </div>
+                            <a href="#" class="tabs__submit btn btn--green">Submit</a>
+                        </div>
+                        <div class="tabs__wrapper tabs__wrapper--ultra">
+                            <div class="tabs__inner">
+                                <span class="tabs__text">City:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="e.g. New York">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Zip:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="e.g. 10001">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Country:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="e.g. United States">
+                                </div>
+                            </div>
+                            <div class="tabs__inner">
+                                <span class="tabs__text">Tax indentifier:</span>
+                                <div class="input-shell input-shell--lg">
+                                    <input type="text" class="input-shell__input" value="11-1212121212">
+                                </div>
+                            </div>
+                            <a href="#" class="tabs__submit tabs__submit--center btn btn--green">Submit</a>
+                        </div>
+                    </div>
+                    <div class="tabs__content">
+                        <p class="tabs__description">Click to connect and get better goBuddy experience:</p>
+                        <div class="tabs__wrap">
+                            <div class="tabs__wrapper tabs__wrapper--ultra">
+                                <div class="tabs__inner">
+                                    <span class="tabs__text">Twitter:</span>
+                                    <div class="tabs__group">
+                                        <a href="#" class="connect-btn connect-btn--blue tabs__connect-btn">
+                                            <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23 2.12955C22.154 2.49106 21.2454 2.73544 20.29 2.84529C21.265 2.28303 22.012 1.39206 22.3647 0.331652C21.4385 0.861403 20.4248 1.23435 19.3678 1.43429C18.5075 0.551288 17.2808 0 15.9237 0C13.3188 0 11.2061 2.03361 11.2061 4.5436C11.2061 4.89924 11.2477 5.2462 11.3277 5.57932C7.40631 5.38954 3.92974 3.58067 1.60269 0.832092C1.19635 1.50337 0.963769 2.28385 0.963769 3.11659C0.963769 4.69275 1.79684 6.0834 3.06268 6.89801C2.31333 6.87565 1.58042 6.68087 0.925218 6.32995V6.38737C0.925218 8.589 2.55135 10.4248 4.70995 10.8423C4.31342 10.9469 3.89728 11.0016 3.46677 11.0016C3.16238 11.0016 2.86707 10.9738 2.57858 10.9216C3.179 12.7261 4.92152 14.0396 6.9856 14.0768C5.37079 15.2958 3.33607 16.0224 1.12613 16.0224C0.745497 16.0224 0.369308 16.0005 0 15.9577C2.08838 17.2472 4.56799 18 7.23262 18C15.9109 18 20.6571 11.0765 20.6571 5.07243C20.6571 4.87532 20.6525 4.67967 20.6427 4.48472C21.5674 3.84063 22.3656 3.04313 23 2.12955Z" fill="white"/>
+                                            </svg>
+                                            <span>Connected</span>
+                                        </a>
+                                        <label for="twitter-connected" class="circle-checkbox tabs__checkbox">
+                                            <input type="checkbox" class="circle-checkbox__input" id="twitter-connected">
+                                            <span class="circle-checkbox__icon"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tabs__inner">
+                                    <span class="tabs__text">Streamlabs:</span>
+                                    <div class="tabs__group">
+                                        <a href="#" class="connect-btn connect-btn--green tabs__connect-btn">
+                                            <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4309 3.67494C10.2234 3.57396 10.7859 2.8339 10.6873 2.02196C10.5888 1.21001 9.86648 0.633652 9.07402 0.734624C8.50489 0.807141 7.98028 0.914467 7.47215 1.0767C4.06967 2.16304 1.40532 4.89294 0.345066 8.37913C0.186728 8.89974 0.0819796 9.43728 0.0112035 10.0204C-0.0873439 10.8324 0.475175 11.5724 1.26763 11.6734C2.06007 11.7744 2.78237 11.198 2.88091 10.3861C2.93524 9.93848 3.00915 9.57891 3.10595 9.26061C3.88347 6.70407 5.83733 4.70215 8.33248 3.9055C8.64312 3.80631 8.99408 3.73059 9.4309 3.67494ZM6.1883 9.33068C5.63672 10.4398 5.63672 11.8918 5.63672 14.7958V19.5365C5.63672 21.1959 5.63672 22.0257 5.95191 22.6594C6.22916 23.217 6.67156 23.6704 7.21569 23.9544C7.83427 24.2772 8.64407 24.2772 10.2636 24.2772H17.7824C20.6166 24.2772 22.0338 24.2772 23.1162 23.7122C24.0685 23.215 24.8426 22.4218 25.3279 21.4461C25.8795 20.337 25.8795 18.885 25.8795 15.981V14.7958C25.8795 11.8918 25.8795 10.4398 25.3279 9.33068C24.8426 8.35503 24.0685 7.56179 23.1162 7.06468C22.0338 6.49951 20.6166 6.49951 17.7824 6.49951H13.7338C10.8996 6.49951 9.48244 6.49951 8.39991 7.06468C7.44767 7.56179 6.67349 8.35503 6.1883 9.33068ZM14.3122 13.9069C13.5136 13.9069 12.8663 14.5702 12.8663 15.3884V18.3514C12.8663 19.1696 13.5136 19.8328 14.3122 19.8328C15.1107 19.8328 15.7581 19.1696 15.7581 18.3514V15.3884C15.7581 14.5702 15.1107 13.9069 14.3122 13.9069ZM18.65 15.3884C18.65 14.5702 19.2972 13.9069 20.0959 13.9069C20.8944 13.9069 21.5418 14.5702 21.5418 15.3884V18.3514C21.5418 19.1696 20.8944 19.8328 20.0959 19.8328C19.2972 19.8328 18.65 19.1696 18.65 18.3514V15.3884Z" fill="#09161D"/>
+                                            </svg>
+                                            <span>Connected</span>
+                                        </a>
+                                        <label for="streamlabs-connected" class="circle-checkbox tabs__checkbox">
+                                            <input type="checkbox" class="circle-checkbox__input" id="streamlabs-connected">
+                                            <span class="circle-checkbox__icon"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tabs__inner">
+                                    <span class="tabs__text">Streamelements:</span>
+                                    <div class="tabs__group">
+                                        <a href="#" class="connect-btn connect-btn--black tabs__connect-btn">
+                                            <svg width="33" height="35" viewBox="0 0 33 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <rect y="0.861816" width="33" height="33.2768" fill="url(#pattern0)"/>
+                                                <defs>
+                                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0" transform="translate(0 -0.00543113) scale(0.00666237)"/>
+                                                </pattern>
+                                                <image id="image0" width="705" height="153" xlink:href="data:image/png;base64,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"/>
+                                                </defs>
+                                            </svg>
+                                            <span>Connected</span>
+                                        </a>
+                                        <label for="streamelements-connected" class="circle-checkbox tabs__checkbox">
+                                            <input type="checkbox" class="circle-checkbox__input" id="streamelements-connected">
+                                            <span class="circle-checkbox__icon"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tabs__inner">
+                                    <span class="tabs__text">DonationAlerts:</span>
+                                    <div class="tabs__group">
+                                        <a href="#" class="connect-btn connect-btn--gray tabs__connect-btn">
+                                            <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                <path d="M11.6199 15.6411H9.81344C9.71052 15.6425 9.61114 15.6045 9.53681 15.5353C9.50243 15.5032 9.47603 15.464 9.45965 15.4205C9.44328 15.377 9.43735 15.3304 9.44233 15.2843L9.60208 13.6965C9.61763 13.5272 9.77925 13.3972 9.97257 13.3978H11.7796C11.8853 13.3978 11.9848 13.4359 12.0562 13.5042C12.1265 13.572 12.1613 13.6633 12.1507 13.7546L11.991 15.343C11.9754 15.5123 11.8138 15.6417 11.6199 15.6411ZM11.9095 12.5314H10.0695C10.022 12.5322 9.97481 12.524 9.93056 12.5071C9.88632 12.4903 9.84593 12.4651 9.8117 12.433C9.77747 12.4009 9.75007 12.3626 9.73106 12.3203C9.71205 12.2779 9.70181 12.2323 9.70092 12.1861L10.2019 6.81982C10.2144 6.73411 10.2587 6.65581 10.3266 6.59976C10.3944 6.54371 10.481 6.51379 10.5699 6.51568H12.4099C12.6132 6.51568 12.7786 6.67047 12.7786 6.86094L12.2626 12.2302C12.2499 12.3129 12.2074 12.3885 12.1427 12.4437C12.0781 12.4988 11.9955 12.5299 11.9095 12.5314ZM22.7307 6.27382L17.9641 0.880938C17.8585 0.761396 17.7275 0.66547 17.5802 0.599723C17.4329 0.533977 17.2727 0.499962 17.1107 0.500008H2.83511C2.55727 0.499 2.28894 0.598413 2.08219 0.778961C1.87544 0.959509 1.74501 1.20832 1.71619 1.47712L0.00424654 20.3906C-0.0231048 20.6947 0.0825709 20.9953 0.295165 21.2208C0.400681 21.3319 0.528738 21.4206 0.671252 21.4812C0.813766 21.5417 0.967642 21.5729 1.12317 21.5727H3.92668L3.50025 26.5L9.01341 21.5763H15.2756C15.5678 21.5763 15.8488 21.4675 16.0589 21.2698L21.9407 15.7342C22.1346 15.5516 22.2539 15.3079 22.2769 15.0467L22.9962 7.07498C23.009 6.93098 22.9922 6.78592 22.9466 6.64834C22.901 6.51076 22.8276 6.38342 22.7307 6.27382ZM18.3713 13.526C18.3489 13.7882 18.2294 14.0336 18.035 14.2165L14.6298 17.3589C14.4201 17.5521 14.1421 17.6595 13.8534 17.6588H5.52362C5.3687 17.657 5.21579 17.6244 5.07427 17.563C4.93275 17.5017 4.8056 17.4129 4.7006 17.3021C4.59581 17.1915 4.51548 17.0612 4.46458 16.9193C4.41368 16.7773 4.3933 16.6267 4.40471 16.4767L5.41298 5.40373C5.44179 5.13492 5.57223 4.88611 5.77898 4.70557C5.98573 4.52502 6.25405 4.4256 6.5319 4.42661H15.0034C15.3278 4.42661 15.6374 4.56326 15.85 4.8015L18.5391 7.81024C18.7418 8.02671 18.8462 8.31331 18.8282 8.60475L18.3713 13.5254V13.526Z" fill="url(#paint0_linear)"/>
+                                                </g>
+                                                <defs>
+                                                <linearGradient id="paint0_linear" x1="19.8557" y1="3.48038" x2="-0.545218" y2="24.0136" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#F59C07"/>
+                                                <stop offset="1" stop-color="#F57507"/>
+                                                </linearGradient>
+                                                <clipPath id="clip0">
+                                                <rect width="23" height="26" fill="white" transform="translate(0 0.5)"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Connected</span>
+                                        </a>
+                                        <label for="donation-connected" class="circle-checkbox tabs__checkbox">
+                                            <input type="checkbox" class="circle-checkbox__input" id="donation-connected">
+                                            <span class="circle-checkbox__icon"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__info">
+                                <ul>
+                                    <li>Buddy will be able to read chat and engage fans</li>
+                                    <li> Buddy will react on donations and subscribtions</li>
+                                    <li>Buddy will generate gaming tips based on the game you play</li>
+                                </ul>
+                                <p>We use data carefully and don't transfer to third-parties</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="getting-started">
+                <div class="getting-started__controls">
+                    <button class="getting-started__trigger">
+                        <span class="getting-started__trigger--text">Getting started</span>
+                        <span class="getting-started__trigger--stage">3</span>
+                    </button>
+                    <button class="getting-started__close getting-started__close--hidden close-btn">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="getting-started__wrapper">
+                    <div class="getting-started__top">
+                        <h3 class="getting-started__head">Learn how to stream with GoBuddy</h3>
+                        <button class="getting-started__head-close close-btn">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="getting-started__lines">
+                        <div class="getting-started__line getting-started__line--active"></div>
+                        <div class="getting-started__line getting-started__line--active"></div>
+                        <div class="getting-started__line"></div>
+                        <div class="getting-started__line"></div>
+                        <div class="getting-started__line"></div>
+                    </div>
+                    <div class="getting-started__list">
+                        <div class="getting-started__item getting-started__item--success">
+                            <div class="getting-started__counter"></div>
+                            <div class="getting-started__content">
+                                <h4 class="getting-started__title">Learn how to use it (2 min)</h4>
+                                <p class="getting-started__description">This is an instructional text that explains to the user what he needs to do and why it is important.</p>
+                                <a href="#" class="getting-started__btn">Go to account</a>
+                            </div>
+                        </div>
+                        <div class="getting-started__item getting-started__item--success">
+                            <div class="getting-started__counter"></div>
+                            <div class="getting-started__content">
+                                <h4 class="getting-started__title">Create goBuddy</h4>
+                                <p class="getting-started__description">This is an instructional text that explains to the user what he needs to do and why it is important.</p>
+                                <a href="#" class="getting-started__btn">Go to account</a>
+                            </div>
+                        </div>
+                        <div class="getting-started__item getting-started__item--active">
+                            <div class="getting-started__counter"></div>
+                            <div class="getting-started__content">
+                                <h4 class="getting-started__title">Set up your account</h4>
+                                <p class="getting-started__description">This is an instructional text that explains to the user what he needs to do and why it is important.</p>
+                                <a href="#" class="getting-started__btn">Go to account</a>
+                            </div>
+                        </div>
+                        <div class="getting-started__item getting-started__item--disabled">
+                            <div class="getting-started__counter"></div>
+                            <div class="getting-started__content">
+                                <h4 class="getting-started__title">Set up your page & payment</h4>
+                                <p class="getting-started__description">This is an instructional text that explains to the user what he needs to do and why it is important.</p>
+                                <a href="#" class="getting-started__btn">Go to account</a>
+                            </div>
+                        </div>
+                        <div class="getting-started__item getting-started__item--disabled">
+                            <div class="getting-started__counter"></div>
+                            <div class="getting-started__content">
+                                <h4 class="getting-started__title">Download app and stream!</h4>
+                                <p class="getting-started__description">This is an instructional text that explains to the user what he needs to do and why it is important.</p>
+                                <a href="#" class="getting-started__btn">Go to account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal-overlay"></div>
+    <!-- End of modal -->
+    <div class="modal" id="delete-account">
+        <div class="modal__wrapper">
+            <div class="modal__top">
+                <h3 class="modal__title">Delete account</h3>
+                <button class="modal__close">
+                    <svg width="22" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__content">
+                <p class="modal__description">
+                    Are you sure you want to delete your account?<br>
+                    All data will be erased and cannot be returned!
+                </p>
+                <form action="#" class="modal-form">
+                    <div class="modal-form__group">
+                        <div class="input-group modal-form__input-group">
+                            <a href="restore-password.html" class="input-group__link">Forgot?</a>
+                            <input type="password" class="input-group__input" placeholder="Password">
+                        </div>
+                    </div>
+                    <button class="modal-form__btn btn btn--green">Delete account irrevocably!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>
