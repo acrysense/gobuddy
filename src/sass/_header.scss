@@ -8,6 +8,9 @@
     &__inner {
         display: flex;
     }
+    &__btn {
+        min-width: 190px;
+    }
     &__btn + &__btn {
         margin-left: 10px;
     }
