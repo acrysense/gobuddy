@@ -256,6 +256,27 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // COLORS SELECT
+    const colorBtn = document.querySelector('.colors__current')
+
+    if (colorBtn) {
+        const close = () => {
+            colorBtn.nextElementSibling.classList.remove('colors__list--active')
+        }
+        const itemChecker = useItemChecker([colorBtn.parentNode], close)
+
+        colorBtn.addEventListener('click', (event) => {
+            event.preventDefault()
+
+            if (colorBtn.nextElementSibling.classList.contains('colors__list--active')) {
+                colorBtn.nextElementSibling.classList.remove('colors__list--active')
+            } else {
+                colorBtn.nextElementSibling.classList.add('colors__list--active')
+                itemChecker.setBodyChecker()
+            }
+        })
+    }
+
     // FORM PAY NOW
     const methodsFormRadio = document.querySelectorAll('.methods-form__radio input');
     const methodsFormBtn = document.querySelector('.methods-form__btn')
@@ -308,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.addEventListener('keyup', (event) => {
         let key = event.keyCode;
 
-        if (modal && modalOverlay.classList.contains('modal-overlay--active')) {
+        if (modalOverlay && modalOverlay.classList.contains('modal-overlay--active')) {
             if (key == 27) {
                 document.body.classList.remove('scroll-disabled')
                 document.querySelectorAll('.modal.modal--active').forEach((child) => child.classList.remove('modal--active'))

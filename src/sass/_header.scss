@@ -7,9 +7,14 @@
     }
     &__inner {
         display: flex;
+        align-items: center;
     }
     &__btn {
         min-width: 190px;
+        min-height: 45px;
+        &--sm {
+            min-width: 120px;
+        }
     }
     &__btn + &__btn {
         margin-left: 10px;
