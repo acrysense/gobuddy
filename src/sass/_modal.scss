@@ -12,6 +12,7 @@
         z-index: 1001;
         max-width: 424px;
         max-height: 80vh;
+        overflow-y: scroll;
         width: 100%;
         background: $blue-1-color;
         border: 2px solid $blue-5-color;
@@ -72,6 +73,15 @@
             text-align: center;
         }
     }
+    &__text {
+        display: block;
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: 400;
+        a {
+            color: $green-color;
+        }
+    }
     &__loader {
         position: relative;
         display: block;
@@ -111,7 +121,7 @@
 }
 
 .modal-form {
-    margin-top: 14px;
+    margin-top: 18px;
     &__help {
         display: block;
         font-size: 14px;
@@ -120,6 +130,10 @@
     }
     &__btn {
         margin: 30px auto 0;
+        &--ultra {
+            margin-top: 20px;
+            width: 100%;
+        }
     }
 }
 

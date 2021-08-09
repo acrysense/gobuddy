@@ -100,7 +100,7 @@
                         <h3 class="dashboard__subtitle">Skins for activation</h3>
                         <div class="inventory">
                             <div class="inventory__wrapper">
-                                <a href="#" class="inventory__item">
+                                <a href="#" class="inventory__item modal-btn" data-id="skin-check">
                                     <div class="inventory__inner">
                                         <span class="inventory__price">$80</span>
                                         <span class="inventory__diamonds">80</span>
@@ -289,7 +289,39 @@
                     </svg>
                 </button>
             </div>
-            <div class="modal__content"></div>
+            <div class="modal__content">
+                <div class="skin-info">
+                    <div class="skin-info__wrapper">
+                        <div class="skin-info__img">
+                            <img src="img/dist/inventory-01.png" alt="">
+                        </div>
+                        <ul class="skin-info__list">
+                            <li class="skin-info__item skin-info__item--active">
+                                <a href="#" class="skin-info__button">Screenshot</a>
+                            </li>
+                            <li class="skin-info__item">
+                                <a href="#" class="skin-info__button">Unique animation on stream</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skin-info__right skin-info__right--center">
+                        <div class="streamer-info skin-info__streamer">
+                            <div class="streamer-info__ava streamer-info__ava--cover">
+                                <img src="img/dist/ava.png" alt="@streamerakim">
+                            </div>
+                            <div class="streamer-info__body">
+                                <span class="streamer-info__name">@streamerakim</span>
+                                <span class="streamer-info__timer">1 day 8 hours 2 min</span>
+                            </div>
+                        </div>
+                        <div class="input-group skin-info__input-group">
+                            <input type="text" class="input-group__input" placeholder="Type secret word to watch on stream">
+                        </div>
+                        <p class="skin-info__text">E.g. bro. Come back on stream, type the secret word and goBuddy will wear the skin and perform unique animation. Only once per stream during the next 7 days.</p>
+                        <button class="skin-info__btn btn btn--green">Confirm</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="modal-overlay"></div>

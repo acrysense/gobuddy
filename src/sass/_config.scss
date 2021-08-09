@@ -94,6 +94,360 @@ svg circle {
     max-width: 1124px;
 }
 
+.green {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #0E9462;
+    .input-group {
+        &__input {
+            border: 2px solid #000;
+        }
+    }
+    .btn-checkbox {
+        &__input {
+            &:checked ~ .btn-checkbox__group {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #0E9462;
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &__group {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #0E9462;
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #0E9462;
+            }
+        }
+    }
+    .btn {
+        &--blue,
+        &--green {
+            border: 2px solid #000;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-color;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #0E9462;
+            }
+            &:focus {
+                box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            }
+            &:active {
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &--blue {
+            background: #0E9462;
+        }
+        &--green {
+            background: $green-color;
+        }
+    }
+    .tabs--ultra .tabs__content {
+        background: #0E9462;
+    }
+    .tabs__button {
+        background: #0E9462;
+    }
+    .inventory {
+        &__item {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #0E9462;
+            &:active {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #0E9462;
+            }
+        }
+    }
+    .streamer-info {
+        &__ava {
+            background: #0E9462;
+        }
+        &__icon {
+            background-color: #0E9462;
+        }
+    }
+}
+
+.purple {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #730E9B;
+    .input-group {
+        &__input {
+            border: 2px solid #000;
+        }
+    }
+    .btn-checkbox {
+        &__input {
+            &:checked ~ .btn-checkbox__group {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #730E9B;
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &__group {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #730E9B;
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #730E9B;
+            }
+        }
+    }
+    .btn {
+        &--blue,
+        &--green {
+            border: 2px solid #000;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-color;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #730E9B;
+            }
+            &:focus {
+                box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            }
+            &:active {
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &--blue {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #730E9B;
+        }
+        &--green {
+            color: $white-color;
+            background: #730E9B;
+        }
+    }
+    .tabs--ultra .tabs__content {
+        background: #730E9B;
+    }
+    .tabs__button {
+        background: #730E9B;
+    }
+    .inventory {
+        &__item {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #730E9B;
+            &:active {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #730E9B;
+            }
+        }
+    }
+    .streamer-info {
+        &__ava {
+            background: #730E9B;
+        }
+        &__icon {
+            background-color: #730E9B;
+        }
+    }
+}
+
+.red {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #B51024;
+    .input-group {
+        &__input {
+            border: 2px solid #000;
+        }
+    }
+    .btn-checkbox {
+        &__input {
+            &:checked ~ .btn-checkbox__group {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #B51024;
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &__group {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #B51024;
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #B51024;
+            }
+        }
+    }
+    .btn {
+        &--blue,
+        &--green {
+            border: 2px solid #000;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-color;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #B51024;
+            }
+            &:focus {
+                box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            }
+            &:active {
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &--blue {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #B51024;
+        }
+        &--green {
+            color: $white-color;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #B51024;
+        }
+    }
+    .tabs--ultra .tabs__content {
+        background: #B51024;
+    }
+    .tabs__button {
+        background: #B51024;
+    }
+    .inventory {
+        &__item {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #B51024;
+            &:active {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #B51024;
+            }
+        }
+    }
+    .streamer-info {
+        &__ava {
+            background: #B51024;
+        }
+        &__icon {
+            background-color: #B51024;
+        }
+    }
+}
+
+.orange {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #AF6204;
+    .input-group {
+        &__input {
+            border: 2px solid #000;
+        }
+    }
+    .btn-checkbox {
+        &__input {
+            &:checked ~ .btn-checkbox__group {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #AF6204;
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &__group {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AF6204;
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #AF6204;
+            }
+        }
+    }
+    .btn {
+        &--blue,
+        &--green {
+            border: 2px solid #000;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-color;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #AF6204;
+            }
+            &:focus {
+                box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            }
+            &:active {
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &--blue {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AF6204;
+        }
+        &--green {
+            color: $white-color;
+            background: #AF6204;
+        }
+    }
+    .tabs--ultra .tabs__content {
+        background: #AF6204;
+    }
+    .tabs__button {
+        background: #AF6204;
+    }
+    .inventory {
+        &__item {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #AF6204;
+            &:active {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #AF6204;
+            }
+        }
+    }
+    .streamer-info {
+        &__ava {
+            background: #AF6204;
+        }
+        &__icon {
+            background-color: #AF6204;
+        }
+    }
+}
+
+.black {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #1F1F1F;
+    .input-group {
+        &__input {
+            border: 2px solid #000;
+        }
+    }
+    .btn-checkbox {
+        &__input {
+            &:checked ~ .btn-checkbox__group {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #1F1F1F;
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &__group {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1F1F1F;
+            &:hover {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #1F1F1F;
+            }
+        }
+    }
+    .btn {
+        &--blue,
+        &--green {
+            border: 2px solid #000;
+            box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-color;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #1F1F1F;
+            }
+            &:focus {
+                box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.7);
+            }
+            &:active {
+                box-shadow: 0px -4px 0px rgba(0, 0, 0, 0.7);
+            }
+        }
+        &--blue {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1F1F1F;
+        }
+        &--green {
+            color: $white-color;
+            background: #1F1F1F;
+        }
+    }
+    .tabs--ultra .tabs__content {
+        background: #1F1F1F;
+    }
+    .tabs__button {
+        background: #1F1F1F;
+    }
+    .inventory {
+        &__item {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #1F1F1F;
+            &:active {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), #1F1F1F;
+            }
+        }
+    }
+    .streamer-info {
+        &__ava {
+            background: #1F1F1F;
+        }
+        &__icon {
+            background-color: #1F1F1F;
+        }
+    }
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -309,6 +663,9 @@ svg circle {
     &--column {
         flex-direction: column-reverse;
     }
+    &--reverse {
+        flex-direction: row-reverse;
+    }
     &--xl {
         max-width: 380px;
     }
@@ -344,6 +701,40 @@ svg circle {
     }
     &__link + &__input {
         padding: 6px 60px 6px 16px;
+    }
+    &__select {
+        max-width: 118px!important;
+        height: 44px!important;
+        .select-box {
+            &__label,
+            &__selected {
+                font-size: 12px;
+                font-weight: 600;
+                svg {
+                    width: 16px;
+                }
+                svg + span {
+                    margin-left: 6px;
+                }
+            }
+            &__selected {
+                padding: 8px 9px;
+                border: 2px solid $blue-6-color;
+                border-radius: 0 16px 16px 0;
+                &::after {
+                    background-size: 9px;
+                }
+                &--active {
+                    border: 2px solid $green-color;
+                }
+            }
+            &__option {
+                padding: 7px 11px;
+            }
+        }
+    }
+    &__select + &__input {
+        border-radius: 16px 0 0 16px;
     }
     &__input,
     &__textarea {
@@ -551,7 +942,7 @@ svg circle {
             background-repeat: no-repeat;
             background-size: 12px;
             background-position: center center;
-            transition: transform 0.4s;
+            transition: transform 0.3s;
         }
         svg + span {
             display: block;
